@@ -23,7 +23,7 @@
 			</div>
 				<div class="form-group">
 					<label>Upload Logo</label>
-				<input type="file" name="avatar">
+				<input type="file" name="logo">
 				<p class="help-block"></p>
 					</div>
 			<input name="register" type="submit" class="btn btn-default" value="Register" />

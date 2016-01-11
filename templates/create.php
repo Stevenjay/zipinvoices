@@ -2,14 +2,29 @@
 <form role="form">
 							<div class="form-group">
 								<label>Invoice Number</label>
-								<input type="text" class="form-control" name="title" placeholder="001">
+								<input type="text" class="form-control" name="invoicenumber" placeholder="001">
 							</div>
-								<div class="form-group">
-									<label>Description</label>
-									<textarea id="body" rows="10" cols="80" class="form-control" name="body"></textarea>
-									<script>CKEDITOR.replace('body');</script>
-								</div>
-							<button type="submit" class="btn btn-default">Submit</button>
+							<div class="form-group">
+								<label>Date</label>
+								<input type="date" class="form-control" name="date">
+							</div>
+							<div class="form-group">
+								<label>Due</label>
+								<input type="date" class="form-control" name="due">
+							</div>
+							<div class="form-group">
+								<label>Payee</label>
+								<input type="text" class="form-control" name="payee">
+							</div>
+							<div class="form-group">
+								<label>Amount</label>
+								<input type="text" class="form-control" name="amount" placeholder="$0.00">
+							</div>
+							<div class="form-group">
+								<label>Description</label>
+								<textarea id="body" rows="10" cols="80" class="form-control" name="description"></textarea>
+							</div>
+							<button type="submit" class="btn btn-default">Save</button>
 						</form>
 					</div>
 				</div>

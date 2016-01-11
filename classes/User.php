@@ -15,16 +15,15 @@ class User{
 	 */
 	public function register($data){
 			//Insert Query
-			$this->db->query('INSERT INTO users (name, email, logo, username, password, about, last_activity) 
-											VALUES (:name, :email, :logo, :username, :password, :about, :last_activity)');
+			$this->db->query('INSERT INTO users (name, email, logo, username, password) 
+											VALUES (:name, :email, :logo, :username, :password)');
 			//Bind Values
 			$this->db->bind(':name', $data['name']);
 			$this->db->bind(':email', $data['email']);
 			$this->db->bind(':logo', $data['logo']);
 			$this->db->bind(':username', $data['username']);
 			$this->db->bind(':password', $data['password']);
-			$this->db->bind(':about', $data['about']);
-			$this->db->bind(':last_activity', $data['last_activity']);
+			
 			//Execute
 			if($this->db->execute()){
 				return true;
@@ -35,13 +34,13 @@ class User{
 	}
 	
 	/*
-	 * Upload User Avatar
+	 * Upload User Logo
 	 */
 	public function uploadLogo(){
 		$allowedExts = array("gif", "jpeg", "jpg", "png");
 		$temp = explode(".", $_FILES["logo"]["name"]);
 		$extension = end($temp);
-		if ((($_FILES["avatar"]["type"] == "image/gif")
+		if ((($_FILES["logo"]["type"] == "image/gif")
 				|| ($_FILES["logo"]["type"] == "image/jpeg")
 				|| ($_FILES["logo"]["type"] == "image/jpg")
 				|| ($_FILES["logo"]["type"] == "image/pjpeg")
@@ -52,11 +51,11 @@ class User{
 			if ($_FILES["logo"]["error"] > 0) {
 				redirect('register.php', $_FILES["logo"]["error"], 'error');
 			} else {
-				if (file_exists("images/avatars/" . $_FILES["avatar"]["name"])) {
+				if (file_exists("images/logos/" . $_FILES["logo"]["name"])) {
 					redirect('register.php', 'File already exists', 'error');
 				} else {
-					move_uploaded_file($_FILES["avatar"]["tmp_name"],
-					"images/avatars/" . $_FILES["avatar"]["name"]);
+					move_uploaded_file($_FILES["logo"]["tmp_name"],
+					"images/logos/" . $_FILES["logo"]["name"]);
 					
 					return true;
 				}
