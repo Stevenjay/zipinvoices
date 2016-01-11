@@ -1,6 +1,7 @@
 <?php include('includes/header.php'); ?>	
 <ul id="invoices">
-	<?php if($invoices) : ?>
+	<?php echo $invoices->invoice_number; ?>
+	<?php if($invoice) : ?>
 		<?php foreach($invoices as $invoice) : ?>
 		<li class="invoice">
 			<div class="row">
