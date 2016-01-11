@@ -22,13 +22,6 @@ if(isset($user_id)){
 	//$template->title = 'Posts By "'.$user->getUser($user_id)->username.'"';
 }
 
-//Check For Category Filter
-if(!isset($category) && !isset($user_id)){
-	$template->topics = $topic->getAllTopics();
-}
-
-$template->totalTopics = $topic->getTotalTopics();
-
 
 //Display template
 echo $template;

@@ -1,12 +1,12 @@
 <?php include('includes/header.php'); ?>	
-<form role="form">
+<form role="form" method="post" action="create.php">
 							<div class="form-group">
 								<label>Invoice Number</label>
-								<input type="text" class="form-control" name="invoicenumber" placeholder="001">
+								<input type="text" class="form-control" name="invoice_number" placeholder="001">
 							</div>
 							<div class="form-group">
 								<label>Date</label>
-								<input type="date" class="form-control" name="date">
+								<input type="date" class="form-control" name="create_date">
 							</div>
 							<div class="form-group">
 								<label>Due</label>
@@ -24,7 +24,7 @@
 								<label>Description</label>
 								<textarea id="body" rows="10" cols="80" class="form-control" name="description"></textarea>
 							</div>
-							<button type="submit" class="btn btn-default">Save</button>
+							<button name="do_create" type="submit" class="btn btn-default">Save</button>
 						</form>
 					</div>
 				</div>

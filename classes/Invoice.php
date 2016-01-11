@@ -58,4 +58,58 @@ class Invoice {
 		
 		return $row;
 	}
+
+	public function create($data) {
+		//Insert Query
+		$this->db->query("INSERT INTO invoices ( invoice_number, user_id, create_date, due, payee, amount, description)
+									VALUES (:invoice_number, :user_id, :create_date, :due, :payee, :amount, :description)");
+		
+		
+		//Bind Values
+		$this->db->bind(':invoice_number', $data['invoice_number']);
+		$this->db->bind(':user_id', $data['user_id']);
+		$this->db->bind(':create_date', $data['create_date']);
+		$this->db->bind(':due', $data['due']);
+		$this->db->bind(':payee', $data['payee']);
+		$this->db->bind(':amount', $data['amount']);
+		$this->db->bind(':description', $data['description']);
+		
+		//Execute
+		if($this->db->execute()){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

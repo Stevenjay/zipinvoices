@@ -34,8 +34,11 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.php">Home</a></li>
+            <?php if(!isLoggedIn()) : ?>
             <li><a href="register.php">Create An Account</a></li>
+            <?php else : ?>
             <li><a href="create.php">Create Invoices</a></li>
+            <?php endif; ?>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
