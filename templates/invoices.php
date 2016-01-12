@@ -1,7 +1,5 @@
 <?php include('includes/header.php'); 
 
-var_dump($invoices);
-
 ?>	
 
 

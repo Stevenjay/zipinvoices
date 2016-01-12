@@ -10,11 +10,6 @@ $user_id = isset($_GET['user']) ? $_GET['user'] : null;
 //Get Template & Assign Vars
 $template = new Template('templates/invoices.php');
 
-//Assign Template Variables
-if(isset($category)){
-	$template->topics = $invoice->getByCategory($category);
-	$template->title = 'Posts In "'.$topic->getCategory($category)->name.'"';
-}
 
 //Check For User Filter
 if(isset($user_id)){
@@ -22,7 +17,9 @@ if(isset($user_id)){
 	//$template->title = 'Posts By "'.$user->getUser($user_id)->username.'"';
 }
 
-$template->invoices = $invoice->getByUser(1);
+$name = getUser()['username'];
+
+echo $name;
 
 //Display template
 echo $template;
