@@ -25,7 +25,14 @@ $template->invoices = $invoice->getInvoice($id);
 $unique = $invoice->getInvoice($id);
 
 print_r($unique);
-echo $unique->invoice_number;
+
+
+$_SESSION['invoice_number'] = $unique->invoice_number;
+$_SESSION['create_date'] = $unique->create_date;
+$_SESSION['due'] = $unique->due;
+$_SESSION['payee'] = $unique->payee;
+$_SESSION['amount'] = $unique->amount;
+$_SESSION['description'] = $unique->description;
 
 //Display template
 echo $template;
