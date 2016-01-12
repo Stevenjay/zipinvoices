@@ -1,4 +1,10 @@
-<?php include('includes/header.php'); ?>	
+<?php include('includes/header.php'); 
+
+var_dump($invoices);
+
+?>	
+
+
 
 <form role="form" method="post" action="create.php">
 	<div class="form-group">

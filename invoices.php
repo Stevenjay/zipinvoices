@@ -22,6 +22,7 @@ if(isset($user_id)){
 	//$template->title = 'Posts By "'.$user->getUser($user_id)->username.'"';
 }
 
+$template->invoices = $invoice->getByUser(1);
 
 //Display template
 echo $template;
