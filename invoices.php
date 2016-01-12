@@ -4,8 +4,10 @@
 //Create Topics Object
 $invoice = new Invoice;
 
+$user = new User;
+
 //Get user From URL
-$user_id = isset($_GET['user']) ? $_GET['user'] : null;
+$user_id = isset($_GET['username']) ? $_GET['username'] : null;
 
 //Get Template & Assign Vars
 $template = new Template('templates/invoices.php');
@@ -18,6 +20,10 @@ if(isset($user_id)){
 }
 
 $name = getUser()['username'];
+
+$id = htmlspecialchars($_GET["id"]);
+
+echo $id; 
 
 echo $name;
 
