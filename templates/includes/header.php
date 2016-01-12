@@ -50,7 +50,7 @@
 				<div class="main-col">
 					<div class="block">
 						<h1 class="pull-left"><?php echo $title; ?></h1>
-						<h4 class="pull-right">Beautiful Invoicing Software</h4>
+						<h4 class="pull-right">Clever Invoicing Software</h4>
 						<div class="clearfix"></div>
 						<hr>
 						<?php displayMessage(); ?>

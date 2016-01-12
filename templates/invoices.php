@@ -1,28 +1,32 @@
 <?php include('includes/header.php'); ?>	
-<ul id="invoices">
-	<?php echo $invoices->invoice_number; ?>
-	<?php if($invoice) : ?>
-		<?php foreach($invoices as $invoice) : ?>
-		<li class="invoice">
-			<div class="row">
-				<div class="col-md-2">
-					<img class="logo pull-left" src="images/logo/<?php echo $invoice->logo; ?>" />
-				</div>
-				<div class="col-md-10">
-					<div class="topic-content pull-right">
-						<h3><?php echo $invoice->invoicenumber; ?></h3>
-						<div class="invoice-info">
-							<a href="invoices.php?user=<?php echo urlFormat($invoice->user_id); ?>"><?php echo $invoice->username; ?></a> >> 
-							<?php echo formatDate($topic->create_date); ?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</li>
-		<?php endforeach ; ?>
-					
-						</ul>
-	<?php else : ?>
-		<p>No Invoices To Display</p>
-	<?php endif; ?>
+
+<form role="form" method="post" action="create.php">
+	<div class="form-group">
+		<label>Invoice Number</label>
+		<input type="text" class="form-control" name="invoice_number" placeholder="001">
+	</div>
+	<div class="form-group">
+		<label>Date</label>
+		<input type="date" class="form-control" name="create_date">
+	</div>
+	<div class="form-group">
+		<label>Due</label>
+		<input type="date" class="form-control" name="due">
+	</div>
+	<div class="form-group">
+		<label>Payee</label>
+		<input type="text" class="form-control" name="payee">
+	</div>
+	<div class="form-group">
+		<label>Amount</label>
+		<input type="text" class="form-control" name="amount" placeholder="$0.00">
+	</div>
+	<div class="form-group">
+		<label>Description</label>
+		<textarea id="body" rows="10" cols="80" class="form-control" name="description"></textarea>
+	</div>
+	<button name="do_create" type="submit" class="btn btn-default">Save</button>
+</form>
+				
+
 <?php include('includes/footer.php'); ?>	
