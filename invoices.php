@@ -24,7 +24,8 @@ $template->invoices = $invoice->getInvoice($id);
 
 $unique = $invoice->getInvoice($id);
 
-var_dump($unique);
+print_r($unique);
+echo $unique->invoice_number;
 
 //Display template
 echo $template;
