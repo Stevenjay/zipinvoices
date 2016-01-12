@@ -29,10 +29,10 @@ class Invoice {
 	 * Get Invoices By Username
 	 */
 	public function getByUser($user_id){
-		$this->db->query("SELECT invoices.*, categories.*, users.username, users.logo FROM invoices
+		$this->db->query("SELECT invoices.*, users.username, users.logo FROM invoices
 						INNER JOIN users
-						ON topics.user_id=users.id
-						WHERE topics.user_id = :user_id
+						ON invoices.user_id=users.id
+						WHERE invoices.user_id = :user_id
 		");
 		$this->db->bind(':user_id', $user_id);
 	
@@ -48,8 +48,8 @@ class Invoice {
 	public function getInvoice($id){
 		$this->db->query("SELECT invoicess.*, users.username, users.name, users.logo FROM invoices
 						INNER JOIN users
-						ON topics.user_id = users.id
-						WHERE topics.id = :id			
+						ON invoice.user_id = users.id
+						WHERE invoice.id = :id			
 		");
 		$this->db->bind(':id', $id);
 		

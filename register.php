@@ -2,7 +2,7 @@
 
 <?php
 //Create Topic Object
-$topic = new Invoice;
+$invoice = new Invoice;
 
 //Create User Object
 $user = new User;
