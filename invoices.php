@@ -12,20 +12,19 @@ $user_id = isset($_GET['username']) ? $_GET['username'] : null;
 //Get Template & Assign Vars
 $template = new Template('templates/invoices.php');
 
-
-//Check For User Filter
-if(isset($user_id)){
-	$template->invoices = $invoice->getByUser($user_id);
-	//$template->title = 'Posts By "'.$user->getUser($user_id)->username.'"';
-}
-
 $name = getUser()['username'];
+
+echo $name;
 
 $id = htmlspecialchars($_GET["id"]);
 
-echo $id; 
+echo $id;
 
-echo $name;
+$template->invoices = $invoice->getInvoice($id);
+
+$unique = $invoice->getInvoice($id);
+
+var_dump($unique);
 
 //Display template
 echo $template;

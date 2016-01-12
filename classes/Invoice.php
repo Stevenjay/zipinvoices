@@ -43,12 +43,10 @@ class Invoice {
 	}
 
 	/*
-	 * Get  By ID
+	 * Get Invoice By ID - Return the invoice with the corrosponding ID
 	 */
 	public function getInvoice($id){
-		$this->db->query("SELECT invoices.*, users.username, users.name, users.logo FROM invoices
-						INNER JOIN users
-						ON invoices.user_id = users.id
+		$this->db->query("SELECT * FROM invoices
 						WHERE invoices.id = :id			
 		");
 		$this->db->bind(':id', $id);
