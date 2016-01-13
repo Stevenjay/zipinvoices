@@ -84,7 +84,7 @@ class Invoice {
 	public function update($updated) {
 		
 		var_dump($updated);
-		die();
+		
 		//Insert Query
 		$this->db->query("UPDATE invoices SET invoice_number=:invoice_number, create_date=:create_date, due = :due, payee = :payee, amount = :amount, description = :description  
 								WHERE id = :id
@@ -92,7 +92,7 @@ class Invoice {
 		
 		
 		//Bind Values
-		$this->db->bind(':id', $updated['id']);
+		$this->db->bind(':id', $_SESSION['singleId']);
 		$this->db->bind(':invoice_number', $updated['invoice_number']);
 		$this->db->bind(':create_date', $updated['create_date']);
 		$this->db->bind(':due', $updated['due']);

@@ -13,7 +13,7 @@ if(isset($_POST['do_update'])) {
 
 	//create data array
 	$updated = array();
-	$updated['id'] = $invoice->getInvoice('id');
+	$updated['id'] = $_SESSION['singleId'];
 	$updated['invoice_number'] = $_POST['invoice_number'];
 	$updated['user_id'] = getUser()['user_id'];
 	$updated['create_date'] = $_POST['create_date'];
