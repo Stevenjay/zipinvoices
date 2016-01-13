@@ -108,8 +108,10 @@ class Invoice {
 		}
 	}
 
-	public function delete($unique) {
-		$his->db->query("DELETE FROM invoices WHERE id = :id
+	public function delete($updated) {
+		echo "here";
+
+		$this->db->query("DELETE FROM invoices WHERE id = :id
 
 			");
 		$this->db->bind(':id', $_SESSION['singleId']);

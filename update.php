@@ -4,7 +4,17 @@
 $invoice = new Invoice;
 
 if(isset($_POST['do_delete'])) {
-		echo "Run the delete";
+	$updated = array();
+	$updated['id'] = $_SESSION['singleId'];
+	$updated['invoice_number'] = $_POST['invoice_number'];
+	$updated['user_id'] = getUser()['user_id'];
+	$updated['create_date'] = $_POST['create_date'];
+	$updated['due'] = $_POST['due'];
+	$updated['payee'] = $_POST['payee'];
+	$updated['amount'] = $_POST['amount'];
+	$updated['description'] = $_POST['description'];
+		
+	$invoice->delete($updated);
 	}
 
 if(isset($_POST['do_update'])) {
