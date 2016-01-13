@@ -73,3 +73,4 @@ function getUser(){
 	$userArray['name'] = $_SESSION['name'];
 	return $userArray;
 }
+

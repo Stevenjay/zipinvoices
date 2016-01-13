@@ -1,6 +1,6 @@
 body {
   padding-top: 60px;
-  background:#c5e3ed;
+  background:#f4f4f4;
   font-size:15px;
 }
 
@@ -24,14 +24,14 @@ h3{
 
 /* Navbar Customization */
 .navbar{
-	height:40px !important;
-	background:#8aacb8;
+	height:40px ;
+	background:#5c5b69;
 	border:0;
 	margin-bottom:30px;
 }
 
 .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand{
-	color:#fff !important;
+	color:#fff ;
 }
 
 .navbar a:hover,.navbar li.active a{

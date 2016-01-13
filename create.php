@@ -31,6 +31,8 @@ if(isset($_POST['do_create'])) {
 	}
 }
 
+
+
 //Get Template & Assign Vars
 $template = new Template('templates/create.php');
 

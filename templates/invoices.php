@@ -6,7 +6,7 @@
 
 
 
-<form role="form" method="post" action="create.php">
+<form role="form" method="post" action="update.php">
 	<div class="form-group">
 		<label>Invoice Number</label>
 		<input type="text" class="form-control" name="invoice_number" value="<?=  $_SESSION['invoice_number']; ?>">
@@ -31,7 +31,8 @@
 		<label>Description</label>
 		<textarea id="body" rows="10" cols="80" class="form-control" name="description" value=""><?=  $_SESSION['description']; ?></textarea>
 	</div>
-	<button name="do_create" type="submit" class="btn btn-default">Save</button>
+	<button name="do_update" type="submit" class="btn btn-default">Update</button>
+	<button name="do_delete" type="submit" class="btn btn-default">Delete</button>
 </form>
 				
 

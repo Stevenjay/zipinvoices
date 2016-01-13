@@ -80,6 +80,35 @@ class Invoice {
 		}
 	}
 
+
+	public function update($updated) {
+		
+		var_dump($updated);
+		die();
+		//Insert Query
+		$this->db->query("UPDATE invoices SET invoice_number=:invoice_number, create_date=:create_date, due = :due, payee = :payee, amount = :amount, description = :description  
+								WHERE id = :id
+									");
+		
+		
+		//Bind Values
+		$this->db->bind(':id', $updated['id']);
+		$this->db->bind(':invoice_number', $updated['invoice_number']);
+		$this->db->bind(':create_date', $updated['create_date']);
+		$this->db->bind(':due', $updated['due']);
+		$this->db->bind(':payee', $updated['payee']);
+		$this->db->bind(':amount', $updated['amount']);
+		$this->db->bind(':description', $updated['description']);
+		
+		//Execute
+		if($this->db->execute()){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+
 }
 
 

@@ -1,5 +1,5 @@
 <?php include('includes/header.php'); ?>
-<?php var_dump($invoices); ?>		
+		
 	<ul id="invoices">
 	<?php if(isLoggedIn()) : ?>
 	<?php if($invoices) : ?>
