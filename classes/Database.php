@@ -78,7 +78,7 @@ class Database {
 	}
 	
 	
-	public function lastInsertId(){
-		return $this->dbh->lastInsertId();
-	}
+	// public function lastInsertId(){
+	// 	return $this->dbh->lastInsertId();
+	// }
 }
