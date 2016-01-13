@@ -15,6 +15,8 @@ if(isset($_POST['do_delete'])) {
 	$updated['description'] = $_POST['description'];
 		
 	$invoice->delete($updated);
+
+	redirect('index.php', 'Your invoice has been deleted', 'Success');
 	}
 
 if(isset($_POST['do_update'])) {
