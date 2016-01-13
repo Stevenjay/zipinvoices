@@ -17,7 +17,7 @@ class Invoice {
 		$this->db->query("SELECT invoices.*, users.username, users.logo FROM invoices
 							INNER JOIN users
 							ON invoices.user_id = users.id
-							ORDER BY create_date DESC
+							ORDER BY create_date ASC
 							");
 		//Assign Result Set
 		$results = $this->db->resultset();
@@ -100,6 +100,20 @@ class Invoice {
 		$this->db->bind(':amount', $updated['amount']);
 		$this->db->bind(':description', $updated['description']);
 		
+		//Execute
+		if($this->db->execute()){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function delete($unique) {
+		$his->db->query("DELETE FROM invoices WHERE id = :id
+
+			");
+		$this->db->bind(':id', $_SESSION['singleId']);
+
 		//Execute
 		if($this->db->execute()){
 			return true;

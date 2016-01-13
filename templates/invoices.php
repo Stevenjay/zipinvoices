@@ -4,8 +4,6 @@
 
 ?>	
 
-
-
 <form role="form" method="post" action="update.php">
 	<div class="form-group">
 		<label>Invoice Number</label>

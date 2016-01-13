@@ -4,7 +4,7 @@
 $invoice = new Invoice;
 
 if(isset($_POST['do_delete'])) {
-		echo 'Run Delete';
+		echo "Run the delete";
 	}
 
 if(isset($_POST['do_update'])) {
