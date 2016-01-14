@@ -68,9 +68,9 @@ function isLoggedIn(){
 */
 function getUser(){
 	$userArray = array();
-	$userArray['user_id'] = $_SESSION['user_id'];
-	$userArray['username'] = $_SESSION['username'];
-	$userArray['name'] = $_SESSION['name'];
+	$userArray['user_id'] = (isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null );
+	$userArray['username'] = (isset($_SESSION['username']) ? $_SESSION['username'] : null );
+	$userArray['name'] = (isset($_SESSION['name']) ? $_SESSION['name'] : null );
 	return $userArray;
 }
 

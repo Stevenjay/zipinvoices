@@ -12,7 +12,9 @@ $user = new User;
 $template = new Template('templates/frontpage.php');
 
 //Assign Vars
-$template->invoices = $invoice->getAllInvoices();
+$template->invoices = $invoice->getByUser( getUser()['user_id'] );
+
+
 
 //Display template
 echo $template;
