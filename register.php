@@ -18,7 +18,7 @@ if(isset($_POST['register'])){
 	$data['username'] = $_POST['username'];
 	$data['password'] = md5($_POST['password']);
 	$data['password2'] = md5($_POST['password2']);
-	$data['last_activity'] = date("Y-m-d H:i:s");
+	// $data['last_activity'] = date("Y-m-d H:i:s");
 	
 	//Required Fields
 	$field_array = array('name','email','username','password','password2');
@@ -27,7 +27,7 @@ if(isset($_POST['register'])){
 		if($validate->isValidEmail($data['email'])){
 			if($validate->passwordsMatch($data['password'],$data['password2'])){
 					//Upload Logo
-					if($user->uploadlogo()){
+					if($user->uploadLogo()){
 						$data['logo'] = $_FILES["logo"]["name"];
 					}else{
 						$data['logo'] = 'noimage.png';

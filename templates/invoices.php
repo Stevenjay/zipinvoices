@@ -1,7 +1,4 @@
 <?php include('includes/header.php'); 
-
-
-
 ?>	
 
 <form role="form" method="post" action="update.php">
@@ -29,8 +26,8 @@
 		<label>Description</label>
 		<textarea id="body" rows="10" cols="80" class="form-control" name="description" value=""><?=  $_SESSION['description']; ?></textarea>
 	</div>
-	<button name="do_update" type="submit" class="btn btn-default">Update</button>
-	<button name="do_delete" type="submit" class="btn btn-default">Delete</button>
+	<button name="do_update" type="submit" class="btn btn-success">Update</button>
+	<button name="do_delete" type="submit" class="btn btn-danger">Delete</button>
 </form>
 				
 

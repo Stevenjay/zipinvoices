@@ -30,7 +30,6 @@ class Invoice {
 	 */
 	public function getByUser($id){
 
-		echo 'Here';
 		echo $id;
 
 		$this->db->query("SELECT invoices.* FROM invoices
