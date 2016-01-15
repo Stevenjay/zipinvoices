@@ -48,6 +48,25 @@ if(isset($_POST['do_update'])) {
 	}
 }
 
+if(isset($_POST['do_pdf']))
+{
+	$content = (isset($_POST['invoice_number']) ? $_POST['invoice_number'] : null);
+	$datepdf = $_POST['create_date'];
+
+	if(empty($content))
+	{
+		$error = 'Please enter some content';
+	} else {
+		include_once('dompdf/dompdf_config.inc.php');
+
+		$dompdf = new DOMPDF();
+		$dompdf->load_html($content);
+		$dompdf->load_html($datepdf);
+		$dompdf->render();
+		$dompdf->stream('sample.pdf');
+	}
+}
+
 //Get Template & Assign Vars
 $template = new Template('templates/invoices.php');
 

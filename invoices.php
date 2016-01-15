@@ -38,3 +38,6 @@ $_SESSION['singleId'] = $id;
 
 //Display template
 echo $template;
+
+
+

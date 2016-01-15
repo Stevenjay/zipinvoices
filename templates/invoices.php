@@ -1,4 +1,22 @@
 <?php include('includes/header.php'); 
+
+if(isset($_POST['do_pdf']))
+{
+	$content = (isset($_POST['invoice_number']) ? $_POST['invoice_number'] : null);
+
+	if(empty($content))
+	{
+		$error = 'Please enter some content';
+	} else {
+		include_once('dompdf/dompdf_config.inc.php');
+
+		$dompdf = new DOMPDF();
+		$dompdf->load_html($content);
+		$dompdf->render();
+		$dompdf->stream('sample.pdf');
+	}
+}
+
 ?>	
 
 <form role="form" method="post" action="update.php">
@@ -28,6 +46,7 @@
 	</div>
 	<button name="do_update" type="submit" class="btn btn-success">Update</button>
 	<button name="do_delete" type="submit" class="btn btn-danger">Delete</button>
+	<button name="do_pdf" type="submit" class="btn btn-default">Convert to PDF</button>
 </form>
 				
 
