@@ -50,20 +50,18 @@ if(isset($_POST['do_update'])) {
 
 if(isset($_POST['do_pdf']))
 {
-	$content = (isset($_POST['invoice_number']) ? $_POST['invoice_number'] : null);
-	$datepdf = $_POST['create_date'];
+	$content = "<h1>This pdf is great</h1>
+				<h2>So good</h2>
+	";
 
-	if(empty($content))
+	if($content)
 	{
-		$error = 'Please enter some content';
-	} else {
 		include_once('dompdf/dompdf_config.inc.php');
 
 		$dompdf = new DOMPDF();
 		$dompdf->load_html($content);
-		$dompdf->load_html($datepdf);
 		$dompdf->render();
-		$dompdf->stream('sample.pdf');
+		$dompdf->stream('invoice.pdf');
 	}
 }
 
