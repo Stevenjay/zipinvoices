@@ -1,1 +1,1 @@
-Readme
+Zip Invoices allows you to store, edit and search invoices. Sending invoices is easy as you can convert them to pdf 
