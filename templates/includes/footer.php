@@ -4,7 +4,13 @@
 			<div class="col-md-4">
 				<div class="sidebar">
 					<div class="block">
-						<h3>Login Form</h3>
+						<!-- <h3>Login Form</h3> -->
+						<form>
+							<div class="form-group">
+								<input name="search" type="text" class="form-control" placeholder="Search Invoices">
+							</div>
+							<button name="do_search" type="submit" class="btn btn-primary">Search</button> 
+						</form>
 						<?php if(isLoggedIn()) : ?>
 							<div class="userdata">
 							Welcome, <?php echo getUser()['username']; ?>
