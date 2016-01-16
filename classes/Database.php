@@ -81,4 +81,18 @@ class Database {
 	public function lastInsertId(){
 		return $this->dbh->lastInsertId();
 	}
+
+		public function beginTransaction(){
+		return $this->dbh->beginTransaction();
+	}
+	
+	
+	public function endTransaction(){
+		return $this->dbh->commit();
+	}
+	
+	
+	public function cancelTransaction(){
+		return $this->dbh->rollBack();
+	}
 }

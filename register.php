@@ -27,11 +27,7 @@ if(isset($_POST['register'])){
 		if($validate->isValidEmail($data['email'])){
 			if($validate->passwordsMatch($data['password'],$data['password2'])){
 					//Upload Logo
-					if($user->uploadLogo()){
-						$data['logo'] = $_FILES["logo"]["name"];
-					}else{
-						$data['logo'] = 'noimage.png';
-					}
+
 					//Register User
 					if($user->register($data)){
 						redirect('index.php', 'You are registered and can now log in', 'success');
@@ -51,8 +47,6 @@ if(isset($_POST['register'])){
 
 //Get Template & Assign Vars
 $template = new Template('templates/register.php');
-
-//Assign Vars
 
 //Display template
 echo $template;

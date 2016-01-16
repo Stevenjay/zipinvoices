@@ -8,7 +8,6 @@
 						<?php if(isLoggedIn()) : ?>
 							<div class="userdata">
 							Welcome, <?php echo getUser()['username']; ?>
-							<img class="logo pull-left" src="images/logos/<?php echo $user->logo; ?>" />
 						</div>
 						<br>
 						<form role="form" method="post" action="logout.php">

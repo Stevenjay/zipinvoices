@@ -30,32 +30,32 @@ class User{
 			} else {
 				return false;
 			}
-			//echo $this->db->lastInsertId();
+			
 	}
 	
 	/*
 	 * Upload User Logo
 	 */
-	public function uploadLogo(){
+	public function uploadAvatar(){
 		$allowedExts = array("gif", "jpeg", "jpg", "png");
-		$temp = explode(".", $_FILES["logo"]["name"]);
+		$temp = explode(".", $_FILES["avatar"]["name"]);
 		$extension = end($temp);
-		if ((($_FILES["logo"]["type"] == "image/gif")
-				|| ($_FILES["logo"]["type"] == "image/jpeg")
-				|| ($_FILES["logo"]["type"] == "image/jpg")
-				|| ($_FILES["logo"]["type"] == "image/pjpeg")
-				|| ($_FILES["logo"]["type"] == "image/x-png")
-				|| ($_FILES["logo"]["type"] == "image/png"))
-				&& ($_FILES["logo"]["size"] < 100000)
+		if ((($_FILES["avatar"]["type"] == "image/gif")
+				|| ($_FILES["avatar"]["type"] == "image/jpeg")
+				|| ($_FILES["avatar"]["type"] == "image/jpg")
+				|| ($_FILES["avatar"]["type"] == "image/pjpeg")
+				|| ($_FILES["avatar"]["type"] == "image/x-png")
+				|| ($_FILES["avatar"]["type"] == "image/png"))
+				&& ($_FILES["avatar"]["size"] < 100000)
 				&& in_array($extension, $allowedExts)) {
-			if ($_FILES["logo"]["error"] > 0) {
-				redirect('register.php', $_FILES["logo"]["error"], 'error');
+			if ($_FILES["avatar"]["error"] > 0) {
+				redirect('register.php', $_FILES["avatar"]["error"], 'error');
 			} else {
-				if (file_exists("images/logos/" . $_FILES["logo"]["name"])) {
+				if (file_exists("images/avatars/" . $_FILES["avatar"]["name"])) {
 					redirect('register.php', 'File already exists', 'error');
 				} else {
-					move_uploaded_file($_FILES["logo"]["tmp_name"],
-					"images/logos/" . $_FILES["logo"]["name"]);
+					move_uploaded_file($_FILES["avatar"]["tmp_name"],
+					"images/avatars/" . $_FILES["avatar"]["name"]);
 					
 					return true;
 				}

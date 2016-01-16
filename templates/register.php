@@ -21,11 +21,11 @@
 			class="form-control" name="password2"
 			placeholder="Enter Password Again">
 			</div>
-				<div class="form-group">
+<!-- 				<div class="form-group">
 					<label>Upload Logo</label>
-				<input type="file" name="logo">
+				<input type="file" name="avatar">
 				<p class="help-block"></p>
-					</div>
+					</div> -->
 			<input name="register" type="submit" class="btn btn-default" value="Register" />
 </form>
 <?php include('includes/footer.php'); ?>
