@@ -13,17 +13,17 @@ class Invoice {
 	 /*
 	  *	Get All Invoices
 	  */
-	 //  public function getAllInvoices(){
-		// $this->db->query("SELECT invoices.*, users.username, users.logo FROM invoices
-		// 					INNER JOIN users
-		// 					ON invoices.user_id = users.id
-		// 					ORDER BY create_date ASC
-		// 					");
-		// //Assign Result Set
-		// $results = $this->db->resultset();
+	  public function getAllInvoices(){
+		$this->db->query("SELECT invoices.*, users.username, users.logo FROM invoices
+							INNER JOIN users
+							ON invoices.user_id = users.id
+							ORDER BY create_date ASC
+							");
+		//Assign Result Set
+		$results = $this->db->resultset();
 		
-		// return $results;
-	 //  }
+		return $results;
+	  }
 	  
 	/*
 	 * Get Invoices By Username

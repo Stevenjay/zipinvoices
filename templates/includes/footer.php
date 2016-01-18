@@ -5,14 +5,15 @@
 				<div class="sidebar">
 					<div class="block">
 						<!-- <h3>Login Form</h3> -->
-						<form>
+						<?php if(isLoggedIn()) : ?>
+						<h3>Search Invoice</h3>	
+						<form role="form" method="post" action="search.php">
 							<div class="form-group">
 								<input name="search" type="text" class="form-control" placeholder="Search Invoices">
 							</div>
-							<button name="do_search" type="submit" class="btn btn-primary">Search</button> 
+							<button name="do_search" type="submit" class="btn btn-info">Search</button> 
 						</form>
-						<?php if(isLoggedIn()) : ?>
-							<div class="userdata">
+						<div class="userdata">
 							Welcome, <?php echo getUser()['username']; ?>
 						</div>
 						<br>
@@ -20,6 +21,7 @@
 							<input type="submit" name="do_logout" class="btn btn-primary" value="Logout" />
 						</form>
 						<?php else : ?>
+						<h3>Login Form</h3>	
 						<form role="form" method="post" action="login.php">
 						<div class="form-group">
 							<label>Username</label>
