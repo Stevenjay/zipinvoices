@@ -130,6 +130,19 @@ class Invoice {
 		}
 	}
 
+	public function search($search) {
+
+		echo $search;
+
+		$this->db->query("SELECT id FROM invoices WHERE payee LIKE '%$search%'
+
+			");
+		// $this->db->bind(':search', $search);
+
+		$results = $this->db->resultset();
+		
+		return $results;
+}
 
 }
 
