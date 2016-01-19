@@ -10,9 +10,23 @@ $search = $_POST['search'];
 
 // var_dump($search);
 
-if(isset($_POST['do_search'])) {
-	var_dump($invoice->search($search));
+$searchIDs = $invoice->search($search);
+
+// var_dump($searchIDs);
+
+$first = ($searchIDs[0]['id']);
+
+echo $first;
+
+//Find a way to display the results 
+
+//Get Template & Assign Vars
+$template = new Template('templates/frontpage.php');
+
+//Assign Vars
+// $template->invoices = $invoice->getByUser( getUser()['user_id'] );
 
 
-	
-}
+
+//Display template
+echo $template;

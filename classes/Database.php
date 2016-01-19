@@ -63,7 +63,7 @@ class Database {
 	
 	public function resultset(){
 		$this->execute();
-		return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+		return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 	
 	
