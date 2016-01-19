@@ -63,6 +63,11 @@ class Database {
 	
 	public function resultset(){
 		$this->execute();
+		return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+	}
+
+	public function resultsArray(){
+		$this->execute();
 		return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 	
@@ -82,17 +87,17 @@ class Database {
 		return $this->dbh->lastInsertId();
 	}
 
-		public function beginTransaction(){
-		return $this->dbh->beginTransaction();
-	}
+	// 	public function beginTransaction(){
+	// 	return $this->dbh->beginTransaction();
+	// }
 	
 	
-	public function endTransaction(){
-		return $this->dbh->commit();
-	}
+	// public function endTransaction(){
+	// 	return $this->dbh->commit();
+	// }
 	
 	
-	public function cancelTransaction(){
-		return $this->dbh->rollBack();
-	}
+	// public function cancelTransaction(){
+	// 	return $this->dbh->rollBack();
+	// }
 }

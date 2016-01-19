@@ -6,17 +6,23 @@ $invoice = new Invoice;
 
 $user = new User;
 
+$searcher = getUser()['user_id'];
+
+echo $searcher; 
+
 $search = $_POST['search'];
 
 // var_dump($search);
 
 $searchIDs = $invoice->search($search);
 
-// var_dump($searchIDs);
+var_dump($searchIDs);
 
-$first = ($searchIDs[0]['id']);
+$first = ($searchIDs[1]['id']);
 
 echo $first;
+
+// foreach ($searchIDs as $key)
 
 //Find a way to display the results 
 

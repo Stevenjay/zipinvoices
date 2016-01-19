@@ -44,8 +44,6 @@ class Invoice {
 	
 		return $results;
 
-
-
 		}
 
 	/*
@@ -134,12 +132,12 @@ class Invoice {
 
 		echo $search;
 
-		$this->db->query("SELECT id FROM invoices WHERE payee LIKE '%$search%'
+		$this->db->query("SELECT id FROM invoices WHERE user_id = :userID AND payee LIKE '%$search%'
 
 			");
-		// $this->db->bind(':search', $search);
+		$this->db->bind(':userID', getUser()['user_id']);
 
-		$results = $this->db->resultset();
+		$results = $this->db->resultsArray();
 		
 		return $results;
 }
