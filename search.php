@@ -7,7 +7,6 @@ $invoice = new Invoice;
 $user = new User;
 
 $searcher = getUser()['user_id'];
-
 echo $searcher; 
 
 $search = $_POST['search'];
@@ -18,20 +17,21 @@ $searchIDs = $invoice->search($search);
 
 var_dump($searchIDs);
 
-$first = ($searchIDs[1]['id']);
+// $first = ($searchIDs[1]['id']);
+// echo $first;
 
-echo $first;
+foreach ($searchIDs as $key) {
+	foreach($key as $var=>$info) {
+		// echo $info; "<br/>";
 
-// foreach ($searchIDs as $key)
+		$invoices = $invoice->getInvoice($info);
+	}
+}
 
-//Find a way to display the results 
+var_dump($invoices);
 
 //Get Template & Assign Vars
 $template = new Template('templates/frontpage.php');
-
-//Assign Vars
-// $template->invoices = $invoice->getByUser( getUser()['user_id'] );
-
 
 
 //Display template
