@@ -10,7 +10,7 @@
 		</div>
 		<div class="form-group">
 			<label>Choose Username*</label> <input type="text"
-				class="form-control" name="username" placeholder="Create A Username">
+				class="form-control" name="username" placeholder="Create A Username" id="username">
 			</div>
 		<div class="form-group">
 			<label>Password*</label> <input type="password" class="form-control"

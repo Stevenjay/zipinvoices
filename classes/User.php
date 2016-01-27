@@ -15,12 +15,12 @@ class User{
 	 */
 	public function register($data){
 			//Insert Query
-			$this->db->query('INSERT INTO users (name, email, logo, username, password) 
-											VALUES (:name, :email, :logo, :username, :password)');
+			$this->db->query('INSERT INTO users (name, email, username, password) 
+											VALUES (:name, :email, :username, :password)');
 			//Bind Values
 			$this->db->bind(':name', $data['name']);
 			$this->db->bind(':email', $data['email']);
-			$this->db->bind(':logo', $data['logo']);
+			// $this->db->bind(':logo', $data['logo']);
 			$this->db->bind(':username', $data['username']);
 			$this->db->bind(':password', $data['password']);
 			
