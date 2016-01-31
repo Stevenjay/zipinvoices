@@ -50,11 +50,10 @@ if(isset($_POST['do_update'])) {
 
 if(isset($_POST['do_pdf']))
 {
-	$content = "<h1>This pdf is great</h1>
-				<h2>So good</h2>
-	"
-	;
+	$content = "<h1>Invoice ID: " . $_POST['invoice_number'] . "</h1>" . "<h2>Date: " . $_POST['create_date'] . "</h2>" 
+	. "<h2>Due Date: " . $_POST['due'] . "</h2>"
 
+	;
 
 	if($content)
 	{
