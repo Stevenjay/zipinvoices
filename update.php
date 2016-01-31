@@ -52,7 +52,9 @@ if(isset($_POST['do_pdf']))
 {
 	$content = "<h1>This pdf is great</h1>
 				<h2>So good</h2>
-	";
+	"
+	;
+
 
 	if($content)
 	{

@@ -28,11 +28,10 @@ foreach ($searchIDs as $key) {
 	}
 }
 
-var_dump($invoices);
-
 //Get Template & Assign Vars
 $template = new Template('templates/frontpage.php');
 
+$template->invoices = $invoice->search($search);
 
 //Display template
 echo $template;

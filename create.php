@@ -22,7 +22,7 @@ if(isset($_POST['do_create'])) {
 
 	if($validate->isRequired($field_array)) {
 		if($invoice->create($data)) {
-			redirect('index.php', 'Your topic has been posted', 'Success');
+			redirect('index.php', 'Your invoice has been saved', 'Success');
 		} else {
 			redirect('invoice.php?id='.$invoice_id, 'Something has gone wrong', 'error');
 		}

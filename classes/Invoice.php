@@ -132,7 +132,7 @@ class Invoice {
 
 		echo $search;
 
-		$this->db->query("SELECT id FROM invoices WHERE user_id = :userID AND payee LIKE '%$search%'
+		$this->db->query("SELECT * FROM invoices WHERE user_id = :userID AND payee LIKE '%$search%'
 
 			");
 		$this->db->bind(':userID', getUser()['user_id']);
