@@ -14,17 +14,11 @@ $template = new Template('templates/invoices.php');
 
 $name = getUser()['username'];
 
-echo $name;
-
 $id = htmlspecialchars($_GET["id"]);
-
-echo $id;
 
 $template->invoices = $invoice->getInvoice($id);
 
 $unique = $invoice->getInvoice($id);
-
-print_r($unique);
 
 $_SESSION['invoice_number'] = $unique->invoice_number;
 $_SESSION['create_date'] = $unique->create_date;

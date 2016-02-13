@@ -15,6 +15,5 @@ $template = new Template('templates/frontpage.php');
 $template->invoices = $invoice->getByUser( getUser()['user_id'] );
 
 
-
 //Display template
 echo $template;

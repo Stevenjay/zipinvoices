@@ -24,6 +24,8 @@
 		<p>No Invoices To Display</p>
 	<?php endif; ?>
 	<?php else : ?>
-		<p>Log in to view invoices</p>
+		<h2>Get paid faster with online invoicing software </h2>
+		{{-- <img src="/../templates/images/logo.jpg" alt="Zip Invoices"  height="300px"/> --}}
+		<p>Improve cashflow and get paid quickly and easily when you send professional invoices. Zip Invoices allows you to quickly and create, save and search through your invoices, giving you more time to work on your business.</p>
 	<?php endif; ?>	
 <?php include('includes/footer.php'); ?>	

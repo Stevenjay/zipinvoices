@@ -30,8 +30,6 @@ class Invoice {
 	 */
 	public function getByUser($id){
 
-		echo $id;
-
 		$this->db->query("SELECT invoices.* FROM invoices
 						-- INNER JOIN users
 						-- ON invoices.user_id=users.id
@@ -87,8 +85,6 @@ class Invoice {
 
 	public function update($updated) {
 		
-		var_dump($updated);
-		
 		//Insert Query
 		$this->db->query("UPDATE invoices SET invoice_number=:invoice_number, create_date=:create_date, due = :due, payee = :payee, amount = :amount, description = :description  
 								WHERE id = :id
@@ -113,7 +109,6 @@ class Invoice {
 	}
 
 	public function delete($updated) {
-		echo "here";
 
 		$this->db->query("DELETE FROM invoices WHERE id = :id
 
@@ -130,7 +125,6 @@ class Invoice {
 
 	public function search($search) {
 
-		echo $search;
 
 		$this->db->query("SELECT * FROM invoices WHERE user_id = :userID AND payee LIKE '%$search%'
 
