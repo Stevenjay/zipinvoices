@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 27, 2016 at 03:49 am
+-- Generation Time: Apr 13, 2016 at 04:54 am
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `invoices` (
   `amount` int(11) NOT NULL,
   `description` text NOT NULL,
   `payee` varchar(50) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `invoices`
@@ -43,9 +43,14 @@ CREATE TABLE IF NOT EXISTS `invoices` (
 
 INSERT INTO `invoices` (`id`, `user_id`, `invoice_number`, `create_date`, `due`, `amount`, `description`, `payee`) VALUES
 (23, 5, 4, '2016-01-22', '2016-01-30', 100, 'Car parts\r\nBikes\r\nWees', 'Rob'),
-(25, 5, 2, '2016-01-21', '2016-01-29', 0, 'ddddd', 'smithy'),
-(26, 5, 444, '2016-01-07', '2016-01-29', 44444, '', 'sam'),
-(27, 1, 99, '2016-01-12', '2016-01-29', 100, '', 'solomon');
+(25, 5, 2, '2016-01-21', '2016-01-29', 66, 'Fire Wood', 'Smithy'),
+(26, 5, 444, '2016-01-07', '2016-01-29', 44444, 'Plumbing', 'Sam'),
+(28, 5, 9, '2016-02-20', '2016-02-25', 12, 'Cards', 'John'),
+(30, 1, 3, '2016-02-17', '2016-02-26', 50, 'Hello you', 'Roger'),
+(31, 1, 5, '2016-03-17', '2016-03-24', 33, 'Hey', 'Me'),
+(32, 8, 5, '2016-04-13', '2016-04-23', 12, 'Shopping', 'Gunther'),
+(33, 7, 6, '2016-04-16', '2016-04-26', 55, 'Movie Tickets', 'Doug'),
+(34, 7, 9, '2016-04-19', '2016-04-30', 55, 'Roofing Material', 'Mark');
 
 -- --------------------------------------------------------
 
@@ -57,36 +62,18 @@ CREATE TABLE IF NOT EXISTS `users` (
 `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `logo` varchar(100) NOT NULL,
   `username` varchar(10) NOT NULL,
   `password` varchar(64) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `logo`, `username`, `password`) VALUES
-(1, 'Steven Jasionowicz', 'steven.jasionowicz@gmail.com', 'batman-logo-big.gif', 'steven', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(4, 'john', 'john@gmail.com', 'Twitter_logo_blue.png', 'johnathan', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(5, 'admin', 'admin@admin.com', '1.jpg', 'admin', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(6, 'user', 'user@user.com', 'willwork.jpeg', 'user', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(7, 'Howard', 'howard@howard.com', 'png.png', 'howard', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(8, 'test', 'test@test.com', 'lg.png', 'test', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(9, 'artie', 'artie@mail.com', 'ima.png', 'artie', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(10, 'reetz', 'reetz@mail.com', 'ps_playstation_logo.png', 'reetz', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(11, 'elf', 'elf@elf.com', '12.jpeg', 'elf', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(12, 'little', 'little@little.com', 'little.jpeg', 'little', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(13, 'view', 'view@view.com', 'view.jpeg', 'view', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(14, 'small', 'small@gmail.com', 'noimage.png', 'small', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(15, 'wwe', 'wwe@gmail.com', 'wwe.png', 'wwe', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(16, 'jackie', 'jackie@howard.com', 'jackie-martling-04.jpg', 'jackie', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(17, 'jokeman', 'jokeman@gmail.com', 'joke.jpeg', 'jokeman', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(18, 'art', 'art@art.com', 'art.jpg', 'art', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(19, 'arto', 'arto@gmail.com', 'arto.jpg', 'arto', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(20, 'boris', 'boris@boris.com', 'art.jpg', 'boris', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(21, 'john', 'john@gmail.com', '', 'john', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(22, 'john', 'john@gmail.com', '', 'john', 'd8578edf8458ce06fbc5bb76a58c5ca4');
+INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`) VALUES
+(1, 'Steven Jasionowicz', 'steven.jasionowicz@gmail.com', 'steven', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
+(7, 'Howard', 'howard@howard.com', 'howard', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
+(8, 'Mark', 'mark@yoobee.com', 'marko', 'd8578edf8458ce06fbc5bb76a58c5ca4');
 
 --
 -- Indexes for dumped tables
@@ -112,12 +99,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

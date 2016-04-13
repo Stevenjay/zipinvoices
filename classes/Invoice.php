@@ -31,8 +31,8 @@ class Invoice {
 	public function getByUser($id){
 
 		$this->db->query("SELECT invoices.* FROM invoices
-						-- INNER JOIN users
-						-- ON invoices.user_id=users.id
+						INNER JOIN users
+						 ON invoices.user_id=users.id
 						WHERE invoices.user_id = :id 
 		");
 		$this->db->bind(':id', $id);
